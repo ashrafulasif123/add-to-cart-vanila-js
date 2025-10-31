@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart Project</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+</head>
+
+<body class="bg-gray-100 min-h-screen flex justify-center items-center">
+    <div class="w-1/2 m-auto">
+        <!-- Open the modal using ID.showModal() method -->
+        <div class="bg-white p-6 rounded-xl shadow-lg space-y-6 border" data-wrapper>
+            <!-- Heading -->
+            <h1 class="text-3xl font-bold text-center text-gray-700">🛒 Shopping Cart</h1>
+
+            <!-- Add Product Form -->
+            <div class="flex gap-2">
+                <input id="product-name" type="text" placeholder="Product Name"
+                    class="flex-1 px-3 py-2 border rounded-lg focus:outline-none focus:ring">
+                <input id="product-price" type="text" placeholder="Price"
+                    class="w-32 px-3 py-2 border rounded-lg focus:outline-none focus:ring">
+                <input id="product-id" type="text" placeholder="ProductID"
+                    class="w-32 px-3 py-2 border rounded-lg focus:outline-none focus:ring">
+                <button id="add-product" class="px-4 py-2 bg-blue-500 text-white rounded-lg hover:bg-blue-600">
+                    Add Product
+                </button>
+            </div>
+
+            <!-- Notification -->
+            <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+                <div id="message-box" class="modal-box">
+                    <h3 id="message-header" class="text-lg font-bold "></h3>
+                    <p id="message-text" class="py-4">Press ESC key or click the button below to close</p>
+                    <div class="modal-action">
+                        <form>
+                            <!-- if there is a button in form, it will close the modal -->
+                            <button id="closeButton" class="btn">Close</button>
+                        </form>
+                    </div>
+                </div>
+            </dialog>
+
+            <!-----------------
+                 Product List
+              ----------------->
+            <div>
+                <h2 class="text-xl font-semibold text-gray-700">Products</h2>
+                <div id="products-container" class="text-3xl">
+
+                </div>
+            </div>
+        </div>
+
+        <!-- Cart Section -->
+        <div id="cart-container">
+            <h2 class="text-xl font-semibold text-gray-700">Cart</h2>
+
+            <!-----------------
+                 Add to Cart
+              ----------------->
+
+            <div id="cart-item">
+            </div>
+
+            <!-- Total + Clear Cart -->
+            <div class="flex justify-between items-center mt-4">
+                <span class="text-lg font-bold text-gray-800">Total: $<span id="total-price-cart">0</span></span>
+                <button id="clear-cart" class="px-4 py-2 bg-red-500 text-white rounded-lg hover:bg-red-600">
+                    Clear Cart
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script src="constants.js"></script>
+    <script src="utilities.js"></script>
+    <script src="index.js"></script>
+</body>
+
+</html>
